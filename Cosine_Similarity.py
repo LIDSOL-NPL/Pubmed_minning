@@ -1,6 +1,7 @@
 import sys
 import glob
 import argparse
+import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from pprint import pprint
@@ -13,7 +14,7 @@ args = parser.parse_args()
 titulos=[]
 Corpus=[]
 for archivo in args.archivos:
-    titulos.append(archivo.name)
+    titulos.append(os.path.basename(archivo.name))
     Corpus.append(archivo.read())    
 
 
@@ -23,13 +24,14 @@ tfidf_matrix     = tfidf_vectorizer.fit_transform(documents)
 
 
 i = 0
-cosine_similarity(tfidf_matrix[:], tfidf_matrix)
+#cosine_similarity(tfidf_matrix[:], tfidf_matrix)
 for row in cosine_similarity(tfidf_matrix[:], tfidf_matrix):
-    print titulos[i]
+    r = [ titulos[i].strip("\n"),]
     i += 1
-    pprint(row)
+    print ",".join(r + [str(v) for v in row])
+        
 
-pprint(titulos)
+
 
 # names=[]    
 # for i in range(len(Corpus_titles)):
