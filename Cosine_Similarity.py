@@ -1,11 +1,12 @@
-
-
 import sys
 import glob
-#directory=sys.argv[1]
-path="/home/neo/Documents/Trabajo/Trabajo_academico/CursoCCGBioinfo/Carlos_Natural_Lenguage_Procesing/LearningSciKit/"
-#path= directory
-Corpus_titles = glob.glob( path + "*.txt")
+directory=sys.argv[1]
+path= directory
+#path="/home/neo/Documents/Trabajo/Trabajo_academico/CursoCCGBioinfo/Carlos_Natural_Lenguage_Procesing/LearningSciKit/"
+#path="/home/neo/Documents/Trabajo/Trabajo_academico/CursoCCGBioinfo/Carlos_Natural_Lenguage_Procesing/Data_of_them/corpusTareaSimilitud"
+#path=""
+
+Corpus_titles = glob.glob( path + "/*.txt")
 print Corpus_titles 
 
 Corpus=[]
@@ -30,5 +31,7 @@ print tfidf_matrix.shape
 
 from sklearn.metrics.pairwise import cosine_similarity
 cosine_similarity(tfidf_matrix[:], tfidf_matrix)
+
+print cosine_similarity(tfidf_matrix[:], tfidf_matrix)
 
 
