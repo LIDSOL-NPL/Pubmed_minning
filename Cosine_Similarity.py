@@ -35,3 +35,9 @@ cosine_similarity(tfidf_matrix[:], tfidf_matrix)
 print cosine_similarity(tfidf_matrix[:], tfidf_matrix)
 
 
+names=[]    
+for i in range(len(Corpus_titles)):
+    names.append(Corpus_titles[i][len(path)+1:])
+
+
+print names
