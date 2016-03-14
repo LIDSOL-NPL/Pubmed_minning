@@ -7,7 +7,7 @@ path= directory
 #path=""
 
 Corpus_titles = glob.glob( path + "/*.txt")
-print Corpus_titles 
+#print Corpus_titles 
 
 Corpus=[]
 
