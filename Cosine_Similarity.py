@@ -23,13 +23,16 @@ tfidf_vectorizer = TfidfVectorizer()
 tfidf_matrix     = tfidf_vectorizer.fit_transform(documents)
 
 
+dicts = {t:[] for t in titulos}
 i = 0
-#cosine_similarity(tfidf_matrix[:], tfidf_matrix)
 for row in cosine_similarity(tfidf_matrix[:], tfidf_matrix):
-    r = [ titulos[i].strip("\n"),]
+    j = 0
+    for t in list(row):
+        dicts[titulos[i]].append({ titulos[j]: t })
+        j += 1
     i += 1
-    print ",".join(r + [str(v) for v in row])
-        
+
+pprint(dicts)        
 
 
 
