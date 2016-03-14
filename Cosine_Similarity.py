@@ -13,25 +13,11 @@ pprint(args.archivos)
 #    pprint(archivo.read()[0:70])
 
 
-import argparse
+import sys
 import glob
-
-parser = argparse.ArgumentParser()
-parser.add_argument("path", help="Please provide the exact and complete  path t$
-args = parser.parse_args()
-
-####
-path= args
-flag=  path + "*.txt"
-print flag
-###
-
-print args
-#print args.echo
-
+directory=sys.argv[1]
 #path="/home/neo/Documents/Trabajo/Trabajo_academico/CursoCCGBioinfo/Carlos_Natural_Lenguage_Procesing/LearningSciKit/"
-path= args
-
+path= directory
 Corpus_titles = glob.glob( path + "*.txt")
 print Corpus_titles 
 
