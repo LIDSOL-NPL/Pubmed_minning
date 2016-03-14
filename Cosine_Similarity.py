@@ -7,8 +7,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from pprint import pprint
 
 
-parser = argparse.ArgumentParser(description='cos classify some files')
-parser.add_argument('archivos', type=argparse.FileType('r'), nargs='+')
+parser = argparse.ArgumentParser(description='Cosine classify some files')
+parser.add_argument('archivos', type=argparse.FileType('r'), nargs='+', help='one or more files, or a glob like path_to/*txt')
 args = parser.parse_args()
 
 titulos=[]
