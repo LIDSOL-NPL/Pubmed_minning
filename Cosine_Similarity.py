@@ -33,7 +33,7 @@ for row in cosine_similarity(tfidf_matrix[:], tfidf_matrix):
         tmp[ titulos[j]]=t 
         j += 1
     x = tmp
-    sorted_x = sorted(x.items(), key=operator.itemgetter(1))
+    sorted_x = sorted(x.items(), key=operator.itemgetter(1), reverse=True)
     dicts[titulos[i]] = sorted_x
 
     i += 1
