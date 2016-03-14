@@ -13,6 +13,7 @@
 #    pprint(archivo.read()[0:70])
 
 
+
 import glob
 path="/home/neo/Documents/Trabajo/Trabajo_academico/CursoCCGBioinfo/Carlos_Natural_Lenguage_Procesing/LearningSciKit/"
 Corpus_titles = glob.glob( path + "*.txt")
@@ -22,7 +23,7 @@ Corpus=[]
 
 for title in Corpus_titles:
     with open(title,'r') as myfile:
-        data=myfile.read().remplace('\n',' ')
+        data=myfile.read().replace('\n',' ')
         print data;
         
     Corpus.append(data)
