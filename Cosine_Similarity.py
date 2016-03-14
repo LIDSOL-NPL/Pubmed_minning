@@ -2,6 +2,7 @@ import sys
 import glob
 import argparse
 import os
+import operator
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from pprint import pprint
@@ -23,13 +24,18 @@ tfidf_vectorizer = TfidfVectorizer()
 tfidf_matrix     = tfidf_vectorizer.fit_transform(documents)
 
 
-dicts = {t:[] for t in titulos}
+dicts = {t:{} for t in titulos}
 i = 0
 for row in cosine_similarity(tfidf_matrix[:], tfidf_matrix):
+    tmp = {}
     j = 0
     for t in list(row):
-        dicts[titulos[i]].append({ titulos[j]: t })
+        tmp[ titulos[j]]=t 
         j += 1
+    x = tmp
+    sorted_x = sorted(x.items(), key=operator.itemgetter(1))
+    dicts[titulos[i]] = sorted_x
+
     i += 1
 
 pprint(dicts)        
