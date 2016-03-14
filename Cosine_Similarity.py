@@ -22,8 +22,11 @@ tfidf_vectorizer = TfidfVectorizer()
 tfidf_matrix     = tfidf_vectorizer.fit_transform(documents)
 
 
+i = 0
 cosine_similarity(tfidf_matrix[:], tfidf_matrix)
 for row in cosine_similarity(tfidf_matrix[:], tfidf_matrix):
+    print titulos[i]
+    i += 1
     pprint(row)
 
 pprint(titulos)
