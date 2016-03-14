@@ -43,4 +43,12 @@ for i in range(len(Corpus_titles)):
 
 print names
 
+b=names
+b[0]=['ids']+names
+for j in range(len(a)):
+    b[j+1] = names[j] + a[j]
+    
+print b
+    
+
 
