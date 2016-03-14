@@ -14,7 +14,7 @@ Corpus=[]
 for title in Corpus_titles:
     with open(title,'r') as myfile:
         data=myfile.read().replace('\n',' ')
-        print data;
+        #print data;
         Corpus.append(data)
 
 #documents = (
